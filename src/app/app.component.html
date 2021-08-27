@@ -1,0 +1,122 @@
+<div class="p-2 container d-flex-column justify-content-center align-items-center m-5">
+
+  <h1 class="d-flex justify-content-center mx-auto mt-4 display-4 text-muted">
+    Free QR code Generator
+  </h1>
+
+  <div class="container-fluid px-4">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content m-3 bshadow m-2 p-1">
+          <qr-code [value]="values" [size]="width" [level]="level" [background]="background">
+          </qr-code>
+
+        </div>
+      </div>
+      <div class="d-flex justify-content-center p-3 align-items-center">
+        <button type="button" class="btn btn-outline-secondary d-grid gap-2" (click)="qrData('')"> Generate QR Code
+        </button>
+      </div>
+    </div>
+    <br>
+  </div>
+  <hr>
+
+  <h3 class="d-flex justify-content-start text-muted">Enter your contact Details</h3>
+  <div>
+    <form class="container">
+      <div class="row g-3">
+        <div class="col">
+          <label for="name"><strong>Name</strong></label>
+          <input type="text" id="inputName" class="form-control" name="nombre" [(ngModel)]="data.name"
+            placeholder="Angélica" required autofocus aria-label="First name">
+        </div>
+        <div class="col">
+          <label for="Surname"><strong>Surname</strong></label>
+          <input type="text" id="inputSurname" class="form-control" name="surname" [(ngModel)]="data.surname"
+            placeholder="Jiménez" required aria-label="Last name">
+        </div>
+
+      </div>
+
+      <div class="row g-3">
+        <div class="col">
+          <label for="Email"><strong>Email</strong></label>
+          <input type="email" id="inputEmail" class="form-control" name="email" [(ngModel)]="data.email"
+            placeholder="ajimenez@protonmail.com" autocomplete="email" required />
+        </div>
+
+        <div class="col">
+          <label for="phone"> <strong>Phone</strong></label>
+          <input type="text" id="inputPhone" class="form-control" name="phone" [(ngModel)]="data.phone"
+            placeholder="666666666" required />
+        </div>
+      </div>
+
+      <label for="linkedIn"><strong> LinkedIn</strong> (optional)</label>
+      <input type="url" id="linkedIn" name="linkedIn" class="form-control" name="LinkedIn" [(ngModel)]="data.linkedIn"
+        placeholder="https://www.linkedin.com/in/angelica/jimenez" />
+
+      <label for="homepage"><strong>Web</strong> (optional)</label>
+      <input type="url" id="homepage" name="homepage" class="form-control" name="web" [(ngModel)]="data.web"
+        placeholder="angiejimenez.com" />
+
+    </form>
+    <br>
+    <div class="container d-flex-column justify-content-center align-items-center bg-dark border border-50 rounded">
+      <div class="row">
+        <div class="col">
+          <hr>
+          <div class="form-label d-flex justify-content-start align-items-start bg-dark text-muted align-items-center ">
+            <strong>Change QR color</strong>
+            <div class="btn-group d-flex mx-4 form-label d-flex justify-content-start align-items-center" role="group">
+              <button class="btn btn-outline-danger fs-5 m-2" (click)="qrBackground('RED')">
+                RED
+              </button>
+              <button class="btn btn-outline-light fs-5 m-2 border border-50" (click)="qrBackground('WHITE')">
+                WHITE
+              </button>
+              <button class="btn btn-outline-success fs-5 m-2" (click)="qrBackground('GREEN')">
+                GREEN
+              </button>
+              <button class="btn btn-outline-warning fs-5 m-2" (click)="qrBackground('YELLOW')">
+                YELLOW
+              </button>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div
+              class="form-label d-flex justify-content-start align-items-start bg-dark text-muted align-items-center">
+              <strong>
+                Width
+              </strong>
+              <button class="btn btn-outline-secondary fs-5  m-2 " (click)="qrWidth(450)">
+                450
+              </button>
+              <button class="btn btn-outline-secondary fs-5 m-2" (click)="qrWidth(350)">
+                350
+              </button>
+              <button class="btn btn-outline-secondary fs-5 m-2" (click)="qrWidth(250)">
+                250
+              </button>
+              <button class="btn btn-outline-secondary fs-5 m-2" (click)="qrWidth(150)">150</button>
+
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div
+              class="form-label d-flex justify-content-start align-items-start bg-dark text-muted align-items-center">
+              <strong> Level </strong>
+
+              <button class="btn btn-outline-secondary fs-5  m-2" (click)="qrLevel('L')">L</button>
+              <button class="btn btn-outline-secondary fs-5  m-2" (click)="qrLevel('M')">M</button>
+              <button class="btn btn-outline-secondary fs-5  m-2" (click)="qrLevel('Q')">Q</button>
+              <button class="btn btn-outline-secondary fs-5  m-2" (click)="qrLevel('H')">H</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

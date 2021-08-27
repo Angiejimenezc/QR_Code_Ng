@@ -1,0 +1,42 @@
+
+html, body {
+  height: 100hv;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.sidebar{
+  margin-top: 50px;
+  width: 40%;
+  float: left;
+  border-radius: .25rem;
+  background-color: beige;
+  
+}
+
+.contenedor{
+  display: flex;
+  margin-top: 50px;
+  width: 55%;
+  float:right;
+  margin-right: 1rem;
+  border-radius: .25rem;
+  background-color: beige;
+}
+
+div {
+	font-family: 'Cutive Mono', monospace;
+      }
+
+.bshadow {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(5px 5px 5px #222222);
+  opacity: .5;
+
+}
